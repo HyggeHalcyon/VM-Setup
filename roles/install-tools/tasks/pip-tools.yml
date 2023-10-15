@@ -1,0 +1,10 @@
+---
+- name: Install python packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  loop:
+    - pwntools
+    - tldr
+    - docker
+    - ROPgadget

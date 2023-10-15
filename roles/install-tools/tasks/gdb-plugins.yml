@@ -1,0 +1,16 @@
+---
+- name: "Copying gdb install script"
+  copy:
+    src: files/gdb-peda-pwndbg-gef.sh
+    dest: /tmp/
+    mode: 0777
+
+- name: "Copying gdb plugin templates"
+  copy:
+    src: templates/gdb*
+    dest: /tmp/
+    mode: 0777
+
+- name: "Executing bash script to install gdb-plugins"
+  shell:
+    /tmp/gdb-peda-pwndbg-gef.sh

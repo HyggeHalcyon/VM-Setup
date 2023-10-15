@@ -1,0 +1,12 @@
+# reference: https://alexandrerosseto.medium.com/vmware-linux-how-to-share-folder-between-host-and-vm-62e63419ecbb
+
+# on the vm settings, 
+# go to options 
+# add SharedFolders 
+# name it "Shared-Folder"
+# link it to the path of the folder you wish to share on host 
+
+# commands
+vmware-hgfsclient
+mkdir ~/SharedFolder
+sudo vmhgfs-fuse .host:/Shared-Folder SharedFolder -o allow_other -o uid=1000

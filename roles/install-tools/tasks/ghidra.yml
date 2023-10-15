@@ -1,0 +1,40 @@
+---
+- name: "Check if Ghidra already exist"
+  stat:
+    path: /opt/ghidra_10.4_PUBLIC
+  register: ghidra_exist
+
+- name: "Skipping Installation"
+  fail:
+    msg: "Ghidra already exists. Skipping download."
+  when: ghidra_exist.stat.exists
+
+- name: Install Java SDK
+  apt:
+    name: 
+      - openjdk-17-jdk
+      - openjdk-17-jdk
+    state: latest
+  become: true
+  become_method: sudo
+
+- name: "Download the Ghidra"
+  get_url:
+    url: "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.4_build/ghidra_10.4_PUBLIC_20230928.zip"
+    dest: /tmp
+    register: download_result
+  when: not ghidra_exist.stat.exists
+
+- name: "Unarchive Ghidra"
+  unarchive:
+    src: /tmp/ghidra_10.4_PUBLIC
+    dest: /opt
+    remote_src: yes
+  when: not ghidra_exist.stat.exists and download_result.failed == false
+
+- name: "Create Ghidra symlink"
+  file:
+    src: /opt/ghidra_10.4_PUBLIC/ghidraRun
+    dest: /usr/bin/ghidra
+    state: link
+  when: not ghidra_exist.stat.exists and download_result.failed == false
