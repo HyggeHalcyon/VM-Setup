@@ -3,6 +3,7 @@ FirefoxPlugins:
   - "darkreader"
   - "foxyproxy-standard"
   - "wappalyzer"
+  - "hacktools"
 
 burpsuite_extras_dir: "/usr/local/lib/BurpSuite"
 burpsuite_extras_jars:

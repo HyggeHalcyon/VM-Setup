@@ -7,7 +7,7 @@
 
 - name: "Copying gdb plugin templates"
   copy:
-    src: templates/gdb*
+    src: templates/
     dest: /tmp/
     mode: 0777
 

@@ -5,7 +5,7 @@
   register: ghidra_exist
 
 - name: "Skipping Installation"
-  fail:
+  debug:
     msg: "Ghidra already exists. Skipping download."
   when: ghidra_exist.stat.exists
 

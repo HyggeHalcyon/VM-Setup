@@ -1,5 +1,5 @@
 ---
-- name: Install python packages
+- name: Install pip packages
   pip:
     name: "{{ item }}"
     executable: pip3
@@ -8,3 +8,4 @@
     - tldr
     - docker
     - ROPgadget
+    - checksec-py

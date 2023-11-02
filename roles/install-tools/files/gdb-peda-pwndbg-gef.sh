@@ -25,7 +25,7 @@ if [ -d ~/peda ] || [ -h ~/.peda ]; then
     echo "[-] PEDA found"
 else
     echo "[+] Downloading PEDA..."
-    git clone https://github.com/longld/peda.git /tmp/peda
+    git clone https://github.com/longld/peda.git ~/peda
 fi
 
 # download peda arm
@@ -33,7 +33,7 @@ if [ -d ~/peda-arm ] || [ -h ~/.peda ]; then
     echo "[-] PEDA ARM found"
 else	    
     echo "[+] Downloading PEDA ARM..."
-    git clone https://github.com/alset0326/peda-arm.git /tmp/peda-arm
+    git clone https://github.com/alset0326/peda-arm.git ~//peda-arm
 fi
 
 # download pwndbg
@@ -41,7 +41,7 @@ if [ -d ~/pwndbg ] || [ -h ~/.pwndbg ]; then
     echo "[-] Pwndbg found"
 else
     echo "[+] Downloading Pwndbg..."
-    git clone https://github.com/pwndbg/pwndbg.git /tmp/pwndbg
+    git clone https://github.com/pwndbg/pwndbg.git ~/pwndbg
 
     cd ~/pwndbg
     ./setup.sh
@@ -52,7 +52,7 @@ if [ -d ~/gef ] || [ -h ~/.gef ]; then
     echo "[-] GEF found"
 else
     echo "[+] Downloading GEF..."
-    git clone https://github.com/hugsy/gef.git /tmp/gef
+    git clone https://github.com/hugsy/gef.git ~/gef
 
     cd ~/pwndbg
     ./setup.sh

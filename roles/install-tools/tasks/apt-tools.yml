@@ -14,8 +14,10 @@
     name:
       - openssl
       - liblzma-dev
+      - libssl-dev
       - pkg-config
       - gdb
+      - patchelf
       - jq
       - pipx
       - ntpdate

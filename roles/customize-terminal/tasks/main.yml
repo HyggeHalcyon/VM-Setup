@@ -10,3 +10,29 @@
   copy:
     src: "{{ role_path }}/files/"
     dest: "{{ ansible_env.HOME }}"
+
+- name: "Read current mate terminal profiles"
+  dconf:
+    key: "/org/mate/terminal/global/profile-list"
+    state: "read"
+  register: "profile_list"
+
+- name: "profile_list was not set, add default"
+  set_fact:
+    profile_list: 
+      value: '["default"]'
+  when: profile_list.value is none
+
+- name: "Adding our customized profile"
+  set_fact:
+    new_profile_list: "{{ profile_list.value | regex_replace(']$', \", 'halcyon']\") }}"
+
+- name: "Writing updated profile list"
+  dconf:
+    key: "/org/mate/terminal/global/profile-list"
+    value: "{{ new_profile_list }}"
+  when: "'halcyon' not in profile_list.value"
+
+- name: "Writing customized mate terminal preference"
+  shell:
+    cmd: "dconf load /org/mate/terminal/profiles/halcyon/ < {{ role_path }}/templates/MATE-preference"

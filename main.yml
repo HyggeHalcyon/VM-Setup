@@ -3,17 +3,16 @@
   hosts: localhost
   connection: local
   roles:
-    # - role: "roles/customize-terminal"
+    - role: "roles/customize-terminal"
     - role: "roles/install-tools"
-    # - role: "roles/customize-firefox"
-    - role: "roles/setup-docker"
-    # - role: gantsign.visual-studio-code
-    #   users:
-    #     - username: "{{ ansible_user_id }}" 
-    #       visual_studio_code_extensions:
-    #         - streetsidesoftware.code-spell-checker
-    #         - ms-python.python
-    #         - DEVSENSE.phptools-vscode
-    #         - GitHub.copilot
-    #         - snyk-security.snyk-vulnerability-scanner
-    #         - silofy.hackthebox
+    - role: "roles/customize-firefox"
+    - role: gantsign.visual-studio-code
+      users:
+        - username: "{{ ansible_user_id }}" 
+          visual_studio_code_extensions:
+            - streetsidesoftware.code-spell-checker
+            - ms-python.python
+            - DEVSENSE.phptools-vscode
+            - GitHub.copilot
+            - snyk-security.snyk-vulnerability-scanner
+            - silofy.hackthebox
