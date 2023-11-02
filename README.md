@@ -1,6 +1,5 @@
-# Attack Box
-This is an automated setup for my box I use on daily basis either for offensive security or general development routines.  
-tested on ParrotOS 5.3  
+# VM-Setup
+This is an automated setup for my box I use on daily basis either for offensive security or general development routines. tested on ParrotOS 5.3  
   
 <sub>Inspired by [ippsec](https://github.com/IppSec/parrot-build)</sub>
 
@@ -29,4 +28,4 @@ sudo vmhgfs-fuse .host:/Shared-Folder SharedFolder -o allow_other -o uid=1000
 - [tmux](https://www.youtube.com/watch?v=Lqehvpe_djs)
 - [peda-pwndbg-gef](https://github.com/apogiatzis/gdb-peda-pwndbg-gef/blob/master/install.sh)
 - [set-up ghidra](https://github.com/scrool/ansible-role-ghidra)
-- [sharefolder](ttps://alexandrerosseto.medium.com/vmware-linux-how-to-share-folder-between-host-and-vm-62e63419ecbb)
+- [sharefolder](https://alexandrerosseto.medium.com/vmware-linux-how-to-share-folder-between-host-and-vm-62e63419ecbb)
