@@ -84,7 +84,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*|tmux*)
-    VPN=$(ps -ef | grep 'openvpn [eu|au|us|sg]'|tail -1| rev| awk '{print $1}'|rev |sed 's/\..*$//g')
+    VPN=$(ps -ef | grep 'openvpn' | grep -v "grep" |tail -1| rev| awk '{print $1}'|rev |sed 's/\..*$//g')
     IP=$(ip -4 -o addr show ens33|awk '{print $4}'|sed 's/\/.*$//g')
     if [ ! -z "$VPN" ]; then
       IP=$(ip -4 -o addr show tun0|awk '{print $4}'|sed 's/\/.*$//g')

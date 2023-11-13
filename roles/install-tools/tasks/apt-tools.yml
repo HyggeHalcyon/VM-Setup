@@ -23,6 +23,7 @@
       - ntpdate
       - flameshot
       - exiftool
+      - ffuf
     state: latest
   become: true
   become_method: sudo
