@@ -8,10 +8,18 @@
   apt: upgrade=yes force_apt_get=yes
   become: true
   become_method: sudo
+
+- name: "Install aptitude"
+  apt: 
+    name: aptitude
+    state: latest
+    update_cache: true
+  become: true
+  become_method: sudo
   
 - name: "Installing Packages"
-  package:
-    name:
+  apt:
+    pkg:
       - openssl
       - liblzma-dev
       - libssl-dev
@@ -24,6 +32,10 @@
       - flameshot
       - exiftool
       - ffuf
+      - crackmapexec
+      - freerdp2-x11
+      - rdesktop 
     state: latest
+    update_cache: true
   become: true
   become_method: sudo

@@ -18,5 +18,6 @@
     - rubyntlm
     - winrm-fs
     - evil-winrm
+    - seccomp-tools
   become: true
   become_method: sudo

@@ -3,8 +3,8 @@
   hosts: localhost
   connection: local
   roles:
-    - role: "roles/customize-terminal"
     - role: "roles/install-tools"
+    - role: "roles/customize-terminal"
     - role: "roles/customize-firefox"
     - role: gantsign.visual-studio-code
       users:
