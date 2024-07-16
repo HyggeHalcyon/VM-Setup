@@ -1,10 +1,10 @@
 ---
-- include: apt-tools.yml
-- include: gdb-plugins.yml
-- include: cargo-tools.yml
-- include: pip-tools.yml
-- include: gem-tools.yml
-- include: kerbrute.yml
-- include: ghidra.yml
-- include: github-repos.yml
-# - include: docker.yml
+- include_tasks: apt-tools.yml
+- include_tasks: gdb-plugins.yml
+- include_tasks: cargo-tools.yml
+- include_tasks: pip-tools.yml
+- include_tasks: gem-tools.yml
+- include_tasks: go-tools.yml
+- include_tasks: ghidra.yml
+- include_tasks: github-repos.yml
+- include_tasks: pipx-tools.yml

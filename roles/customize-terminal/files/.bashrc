@@ -139,9 +139,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# If ~/.inputrc doesn't exist yet: First include the original /etc/inputrc
+# If ~/.inputrc doesn't exist yet: First include_tasks the original /etc/inputrc
 # so it won't get overriden
-if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+if [ ! -a ~/.inputrc ]; then echo '$include_tasks /etc/inputrc' > ~/.inputrc; fi
 
 # Add shell-option to ~/.inputrc to enable case-insensitive tab completion
 echo 'set completion-ignore-case On' >> ~/.inputrc

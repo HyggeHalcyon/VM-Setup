@@ -32,9 +32,9 @@
       - flameshot
       - exiftool
       - ffuf
-      - crackmapexec
       - freerdp2-x11
       - rdesktop 
+      - gdb-multiarch
     state: latest
     update_cache: true
   become: true

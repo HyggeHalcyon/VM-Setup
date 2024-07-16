@@ -8,7 +8,7 @@
     - { repo: "https://github.com/danielmiessler/SecLists", location: "/opt/SecLists" }
     - { repo: "https://github.com/carlospolop/PEASS-ng", location: "/opt/PEASS"}
     - { repo: "https://github.com/fortra/impacket", location: "/opt/impacket"}
-    - { repo: "https://github.com/byt3bl33d3r/CrackMapExec", location: "/opt/CrackMapExec"}
+    - { repo: "https://github.com/ambionics/phpggc", location: "/opt/phpgcc"}
   become: true
   become_method: sudo
 
@@ -16,12 +16,5 @@
   pip:
     name: .
     chdir: /opt/impacket
-  become: true
-  become_method: sudo
-
-- name: "Installing CrackMapExec"
-  pip:
-    name: .
-    chdir: /opt/CrackMapExec
   become: true
   become_method: sudo

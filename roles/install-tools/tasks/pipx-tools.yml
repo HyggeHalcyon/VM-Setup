@@ -1,0 +1,6 @@
+---
+- name: Install pipx packages
+  community.general.pipx:
+    name: "{{ item }}"
+  loop:
+    - git+https://github.com/Pennyw0rth/NetExec

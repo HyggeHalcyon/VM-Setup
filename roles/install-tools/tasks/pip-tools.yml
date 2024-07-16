@@ -8,4 +8,6 @@
     - tldr
     - docker
     - ROPgadget
-    - checksec-py
+    - git-dumper
+    - angr
+    - claripy
